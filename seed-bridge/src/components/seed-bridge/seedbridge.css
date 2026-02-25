@@ -1,0 +1,151 @@
+/* seedbridge.css */
+.hero {
+  font-family: "Noto Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+}
+
+.hero-wrap {
+  font-family: "Noto Sans", sans-serif;
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 16px;
+  padding-top: 150px; /* ✅ üstte “büyük alan varmış gibi” */
+}
+
+/* ✅ KART: tamamen şeffaf */
+.hero-card {
+  width: min(760px, 92vw);
+  border-radius: 16px;
+  padding: 40px 40px 40px;
+
+  /* 🔥 Kartın şeffaflığı burada */
+  background: rgba(68, 68, 68, 0); /* tamamen şeffaf */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(1px); /* cam hissi (istersen kapat) */
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* ✅ içerikler tam genişlik */
+  text-align: left; /* ✅ yazılar sola yaslı */
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Üst SVG */
+.hero-card__svg {
+  position: absolute;
+  z-index: 3;
+  top: 50px; /* ✅ kartın tam üstünde */
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.hero-card__svg img {
+  display: block;
+}
+
+/* badge: ortada ve arka planlı */
+.hero-card__badge {
+  align-self: center; /* ✅ badge ortada kalsın */
+  display: inline-flex;
+  padding: 8px 18px;
+  border-radius: 16px;
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.85);
+
+  /* 🔥 Badge arka planı burada */
+  background: linear-gradient(
+    90deg,
+    rgba(2, 18, 28, 1) 0%,
+    rgba(4, 52, 82, 1) 50%,
+    rgba(2, 18, 28, 1) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+}
+
+.hero-card__title {
+  margin: 16px 0 10px;
+  font-size: 56px;
+  line-height: 150%;
+  font-weight: 400;
+  width: 100%;
+}
+
+.hero-card__script {
+  font-style: italic;
+  font-size: 48px;
+  font-family: "Great Vibes", cursive;
+}
+
+.hero-card__desc {
+  margin: 16px 0 60px;
+  font-size: 18px;
+  width: 100%;
+}
+
+.hero-card__actions {
+  display: flex;
+  width: 100%; /* ✅ tam uzunluk */
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: nowrap; /* ✅ yan yana kalsın */
+  margin-top: 0;
+}
+
+.hero-btn {
+  flex: 1; /* ✅ ikisi eşit genişlik */
+  width: 100%;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-1px);
+}
+
+.hero-btn--primary {
+  border-color: rgba(126, 59, 237, 0.55);
+  background: linear-gradient(
+    135deg,
+    rgba(126, 59, 237, 0.92),
+    rgba(181, 140, 255, 0.85)
+  );
+  color: black;
+}
+
+.hero-btn--ghost {
+  background: linear-gradient(135deg, #050816 0%, #0a0f26 55%, #060818 100%);
+}
+
+.hero-card__foot {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.hero-card__footStrong {
+  margin-bottom: 18px;
+  font-size: 22px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-card__footSoft {
+  margin: 4px 0 0;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.55);
+}
