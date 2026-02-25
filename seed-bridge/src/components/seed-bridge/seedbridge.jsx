@@ -17,10 +17,7 @@ export const Seedbridge = () => {
 
           {/* KART */}
           <section className="hero-card">
-            <div className="hero-card__badge">
-              Connecting SMAs with trusted investors
-            </div>
-
+          
             <h1 className="hero-card__title">
               We Build The <span className="hero-card__script">Bridges</span>
               <br />

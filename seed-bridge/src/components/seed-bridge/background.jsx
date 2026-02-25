@@ -1,6 +1,6 @@
 import React from "react";
 import "./background.css";
-import RightSvg from "./right-shape.svg";
+import RightSvg from "./right-shape2.svg";
 
 export default function Background() {
   return (
