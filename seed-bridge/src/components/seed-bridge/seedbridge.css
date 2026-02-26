@@ -1,45 +1,46 @@
-/* seedbridge.css */
 .hero {
   font-family: "Noto Sans", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 48px 16px;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
 }
 
 .hero-wrap {
-  font-family: "Noto Sans", sans-serif;
-  position: relative; 
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 18px 16px;
-  padding-top: 120px; /* ✅ üstte “büyük alan varmış gibi” */
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
-/* ✅ KART: tamamen şeffaf */
 .hero-card {
   width: min(760px, 92vw);
+  max-height: 95vh;
   border-radius: 16px;
-  padding: 40px 40px 40px;
-
-  /* 🔥 Kartın şeffaflığı burada */
-  background: rgba(68, 68, 68, 0); /* tamamen şeffaf */
+  padding: 40px;
+  background: rgba(68, 68, 68, 0);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(1px); /* cam hissi (istersen kapat) */
-
+  backdrop-filter: blur(1px);
   display: flex;
   flex-direction: column;
-  align-items: stretch; /* ✅ içerikler tam genişlik */
-  text-align: left; /* ✅ yazılar sola yaslı */
+  align-items: stretch;
+  text-align: left;
   color: rgba(255, 255, 255, 0.92);
+  position: relative;
+  overflow-y: auto;
 }
 
-/* Üst SVG */
 .hero-card__svg {
   position: absolute;
   z-index: 3;
-  top: 20px; /* ✅ kartın tam üstünde */
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
   pointer-events: none;
@@ -49,16 +50,13 @@
   display: block;
 }
 
-/* badge: ortada ve arka planlı */
 .hero-card__badge {
-  align-self: center; /* ✅ badge ortada kalsın */
+  align-self: center;
   display: inline-flex;
   padding: 8px 18px;
   border-radius: 16px;
   font-size: 22px;
   color: rgba(255, 255, 255, 0.85);
-
-  /* 🔥 Badge arka planı burada */
   background: linear-gradient(
     90deg,
     rgba(2, 18, 28, 1) 0%,
@@ -72,7 +70,7 @@
 .hero-card__title {
   margin: 16px 0 10px;
   font-size: 56px;
-  line-height: 150%;
+  line-height: 1.2;
   font-weight: 400;
   width: 100%;
 }
@@ -84,32 +82,30 @@
 }
 
 .hero-card__desc {
-  margin: 16px 0 60px;
+  margin: 16px 0 40px;
   font-size: 18px;
   width: 100%;
 }
 
 .hero-card__actions {
   display: flex;
-  width: 100%; /* ✅ tam uzunluk */
+  width: 100%;
   justify-content: center;
   gap: 24px;
-  flex-wrap: nowrap; /* ✅ yan yana kalsın */
-  margin-top: 0;
+  flex-wrap: nowrap;
 }
 
 .hero-btn {
-  flex: 1; /* ✅ ikisi eşit genişlik */
-  width: 100%;
-  height: 42px;
+  flex: 1;
+  height: 48px;
   padding: 0 16px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   background: rgba(0, 0, 0, 0.2);
   color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
-  transition: transform 0.12s ease, background 0.12s ease,
-    border-color 0.12s ease;
+  font-size: 16px;
+  transition: transform 0.12s ease, background 0.12s ease;
 }
 
 .hero-btn:hover {
@@ -117,33 +113,30 @@
 }
 
 .hero-btn--primary {
-background: rgba(151, 98, 240, 1);
-font-weight: bold;
+  background: rgba(151, 98, 240, 1);
+  font-weight: bold;
   color: black;
 }
 
 .hero-btn--ghost {
-   background: rgba(68, 68, 68, 0); /* tamamen şeffaf */
-    backdrop-filter: blur(20px);
-border: 1px solid rgba(126, 59, 237, 0.3);
-  backdrop-filter: blur(1px);
+  background: rgba(68, 68, 68, 0);
+  border: 1px solid rgba(126, 59, 237, 0.3);
+  backdrop-filter: blur(20px);
   font-weight: bold;
 }
 
 .hero-card__foot {
-  margin-top: 15px;
+  margin-top: 24px;
   text-align: center;
 }
 
 .hero-card__footStrong {
-  margin-bottom: 18px;
-  font-size: 22px;
-  line-height: 140%;
+  margin-bottom: 8px;
+  font-size: 20px;
   color: rgba(255, 255, 255, 0.78);
 }
 
 .hero-card__footSoft {
-  margin: 4px 0 0;
-  font-size: 18px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.55);
 }

@@ -12,28 +12,11 @@
     linear-gradient(135deg, #050816 0%, #0a0f26 55%, #060818 100%);
 }
 
-.sb-bg__leftGlow {
-  position: absolute;
-  top: 0px;
-  left: 182px;
-  width: 50%;
-  height: 50%;
-
-  background: radial-gradient(
-    circle at 45% 35%,
-    rgba(126, 59, 237, 1) 0%,
-    rgba(126, 59, 237, 0.6) 28%,
-    rgba(126, 59, 237, 0.25) 50%,
-    transparent 72%
-  );
-
-  filter: blur(110px);
-}
 
 .sb-bg__leftGlow {
   position: absolute;
   top: 0px;
-  left: 162px;
+  left: 122px;
   width: 40%;
   height: 40%;
 
@@ -52,7 +35,7 @@
   position: absolute;
 
   top: 0;
-  left: 400px;
+  left: 360px;
   width: 30%;
   height: 50%;
 

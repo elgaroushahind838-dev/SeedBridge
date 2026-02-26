@@ -1,7 +1,6 @@
-// Seedbridge.jsx
 import React from "react";
 import "./seedbridge.css";
-import Background from "./background"; // ✅ component import
+import Background from "./background"; 
 import CenterSvg from "./center-graphic.svg";
 
 export const Seedbridge = () => {
@@ -10,14 +9,15 @@ export const Seedbridge = () => {
       <Background />
       <main className="hero">
         <div className="hero-wrap">
-          {/* ÜSTTE/OVERLAY SVG */}
           <div className="hero-card__svg" aria-hidden="true">
             <img src={CenterSvg} alt="" />
           </div>
 
-          {/* KART */}
           <section className="hero-card">
-          
+            <div className="hero-card__badge">
+              Connecting SMAs with trusted investors
+            </div>
+
             <h1 className="hero-card__title">
               We Build The <span className="hero-card__script">Bridges</span>
               <br />
