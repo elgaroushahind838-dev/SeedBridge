@@ -3,12 +3,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: 100vh;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  position: relative;
+  min-height: 100vh;
+  position: center;
 }
 
 .hero-wrap {
@@ -16,37 +14,51 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
-  position: relative;
 }
-
 .hero-card {
   width: min(760px, 92vw);
   max-height: 95vh;
   border-radius: 16px;
   padding: 40px;
-  background: rgba(68, 68, 68, 0);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(1px);
+
+  /* Cam tabanı */
+  background: linear-gradient(
+    135deg,
+    rgba(11, 18, 32, 0.25) 0%,
+    rgba(14, 26, 47, 0.25) 30%,
+    rgba(19, 43, 79, 0.25) 60%,
+    rgba(30, 64, 175, 0.25) 100%
+  );
+
+  /* 🔥 Asıl glass burada */
+  backdrop-filter: blur(0px);
+
+
+  /* Soft cam border */
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  /* Premium depth */
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
   display: flex;
   flex-direction: column;
-  align-items: stretch;
   text-align: left;
   color: rgba(255, 255, 255, 0.92);
   position: relative;
   overflow-y: auto;
 }
-
 .hero-card__svg {
-  position: absolute;
-  z-index: 3;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  width: 100%;
 }
 
 .hero-card__svg img {
+ width: 455px; /* Logonun boyutu */
+  height: auto;
   display: block;
 }
 
@@ -54,6 +66,7 @@
   align-self: center;
   display: inline-flex;
   padding: 8px 18px;
+  margin-bottom: 20px;
   border-radius: 16px;
   font-size: 22px;
   color: rgba(255, 255, 255, 0.85);
@@ -121,7 +134,7 @@
 .hero-btn--ghost {
   background: rgba(68, 68, 68, 0);
   border: 1px solid rgba(126, 59, 237, 0.3);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(2px);
   font-weight: bold;
 }
 

@@ -9,11 +9,12 @@ export const Seedbridge = () => {
       <Background />
       <main className="hero">
         <div className="hero-wrap">
-          <div className="hero-card__svg" aria-hidden="true">
-            <img src={CenterSvg} alt="" />
-          </div>
-
           <section className="hero-card">
+            {/* ✅ SVG artık kartın içinde ve en üstte */}
+            <div className="hero-card__svg" aria-hidden="true">
+              <img src={CenterSvg} alt="Graphic" />
+            </div>
+
             <div className="hero-card__badge">
               Connecting SMAs with trusted investors
             </div>
