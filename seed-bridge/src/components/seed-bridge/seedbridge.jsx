@@ -2,15 +2,16 @@ import React from "react";
 import "./seedbridge.css";
 import Background from "./background"; 
 import CenterSvg from "./center-graphic.svg";
+import { useNavigate } from "react-router-dom";
 
 export const Seedbridge = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Background />
       <main className="hero">
         <div className="hero-wrap">
           <section className="hero-card">
-            {/* ✅ SVG artık kartın içinde ve en üstte */}
             <div className="hero-card__svg" aria-hidden="true">
               <img src={CenterSvg} alt="Graphic" />
             </div>
@@ -33,12 +34,21 @@ export const Seedbridge = () => {
               ventures.
             </p>
 
-            <div className="hero-card__actions">
-              <button className="hero-btn hero-btn--primary">
-                Join as Investor
-              </button>
-              <button className="hero-btn hero-btn--ghost">Join as SMA</button>
-            </div>
+           <div className="hero-card__actions">
+  <button
+    className="hero-btn hero-btn--primary"
+    onClick={() => navigate("/create-investor")}
+  >
+    Join as Investor
+  </button>
+
+  <button
+    className="hero-btn hero-btn--ghost"
+    onClick={() => navigate("/create-sma")}
+  >
+    Join as SMA
+  </button>
+</div>
 
             <div className="hero-card__foot">
               <p className="hero-card__footStrong">
