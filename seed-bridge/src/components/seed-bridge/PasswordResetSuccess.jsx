@@ -2,7 +2,7 @@ import React from "react";
 import "./seedbridge.css";
 import Background from "./background";
 import { useNavigate } from "react-router-dom";
-import seccessfulSvg from "./seccessful.svg";
+
 
 const PasswordResetSuccess = () => {
   const navigate = useNavigate();

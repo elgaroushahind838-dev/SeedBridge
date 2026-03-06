@@ -41,27 +41,6 @@ const AppleIcon = () => (
 </svg>
 );
 
-function Modal({ title, onClose, children }) {
-  return (
-    <div className="sma-modal__backdrop" role="dialog" aria-modal="true">
-      <div className="sma-modal">
-        <div className="sma-modal__head">
-          <h3 className="sma-modal__title">{title}</h3>
-          <button className="sma-modal__close" onClick={onClose} aria-label="Close">
-            ✕
-          </button>
-        </div>
-        <div className="sma-modal__body">{children}</div>
-        <div className="sma-modal__foot">
-          <button className="hero-btn hero-btn--ghost" onClick={onClose}>
-            Close
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 const Login = () => {
   const navigate = useNavigate();
 const onSocial = (provider) => {

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import "./seedbridge.css";
 import Background from "./background";
 import { useNavigate } from "react-router-dom";
