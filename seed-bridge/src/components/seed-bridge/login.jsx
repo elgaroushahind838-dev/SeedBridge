@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import "./seedbridge.css";
 import Background from "./background";
 import CenterSvg from "./center-graphic.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const GoogleIcon = () => (
  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -43,6 +43,7 @@ const AppleIcon = () => (
 
 const Login = () => {
   const navigate = useNavigate();
+const { role } = useParams();
 const onSocial = (provider) => {
   alert(`${provider} login clicked (demo)`);
 };
@@ -56,12 +57,16 @@ const onSocial = (provider) => {
 
   const canSubmit = emailValid && pass.length > 0;
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    if (!canSubmit) return;
+const onSubmit = (e) => {
+  e.preventDefault();
+  if (!canSubmit) return;
 
-    // demo: başarılı login sonrası nereye gitsin istersen değiştir
-    navigate("/");
+  const dashboardRoutes = {
+    investor: "/dashboard/investor",
+    sma: "/dashboard/sma",
+  };
+
+  navigate(dashboardRoutes[role] || "/");
     
   };
 
@@ -87,7 +92,7 @@ const onSocial = (provider) => {
                 onClick={() => onSocial("Google")}
               >
                 <GoogleIcon />
-                <span>Continue with Google</span>
+                <span>Google</span>
               </button>
 
               <button
@@ -96,7 +101,7 @@ const onSocial = (provider) => {
                 onClick={() => onSocial("Facebook")}
               >
                 <FacebookIcon />
-                <span>Continue with Facebook</span>
+                <span>Facebook</span>
               </button>
 
               <button
@@ -105,7 +110,7 @@ const onSocial = (provider) => {
                 onClick={() => onSocial("Apple")}
               >
                 <AppleIcon />
-                <span>Continue with Apple</span>
+                <span>Apple</span>
               </button>
             </div>
 
@@ -146,7 +151,7 @@ const onSocial = (provider) => {
 <button
                   type="button"
                   className="login-forgot"
-                  onClick={() => navigate("/forgot-password")}
+                  onClick={() => navigate(`/forgot-password/${role}`)}
                 >
                   Forgot your password?
                 </button>
@@ -157,13 +162,13 @@ const onSocial = (provider) => {
 
               <div className="login-foot">
                 Don&apos;t have an account?{" "}
-                <button
-                  type="button"
-                  className="login-signup"
-                  onClick={() => navigate("/create-sma")}
-                >
-                  Sign up
-                </button>
+               <button
+  type="button"
+  className="login-signup"
+  onClick={() => navigate(`/create-account/${role}`)}
+>
+  Sign up
+</button>
               </div>
             </form>
 

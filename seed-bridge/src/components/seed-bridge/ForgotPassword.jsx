@@ -1,10 +1,11 @@
 import React, { useMemo, useState } from "react";
 import "./seedbridge.css";
 import Background from "./background";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ForgotPassword = () => {
   const navigate = useNavigate();
+  const { role } = useParams();
 
   const [email, setEmail] = useState("");
 
@@ -19,7 +20,7 @@ const onSubmit = (e) => {
   e.preventDefault();
   if (!canSubmit) return;
 
-  navigate("/set-new-password");
+  navigate(`/set-new-password/${role}`);
 };
 
   return (
@@ -65,7 +66,7 @@ const onSubmit = (e) => {
               <button
                 type="button"
                 className="back-login"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate(`/login/${role}`)}
               >
                 Back to log in
               </button>

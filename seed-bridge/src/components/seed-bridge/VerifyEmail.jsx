@@ -1,11 +1,12 @@
 import React from "react";
 import "./seedbridge.css";
 import Background from "./background";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import MailCheck from "./mail-check.svg";
 
 const VerifyEmail = () => {
   const navigate = useNavigate();
+  const { role } = useParams();
 
   return (
     <>
@@ -22,7 +23,7 @@ const VerifyEmail = () => {
               </div>
 
               <p className="verify-text">
-                We&apos;ve sent a verification link to <br />
+                We've sent a verification link to <br />
                 <span className="verify-email">alex.v@design.com</span>
               </p>
 
@@ -33,7 +34,7 @@ const VerifyEmail = () => {
               <button
                 className="verify-btn verify-btn--primary"
                 type="button"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate(`/login/${role}`)}
               >
                 Resend verification email
               </button>
@@ -41,7 +42,7 @@ const VerifyEmail = () => {
               <button
                 className="verify-btn verify-btn--ghost"
                 type="button"
-                onClick={() => navigate("/change-email")}
+                onClick={() => navigate(`/create-account/${role}`)}
               >
                 Change email address
               </button>

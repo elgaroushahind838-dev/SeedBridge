@@ -1,12 +1,12 @@
 import React from "react";
 import "./seedbridge.css";
 import Background from "./background";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 
 const PasswordResetSuccess = () => {
   const navigate = useNavigate();
-
+const { role } = useParams();
   const SuccessIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="120" height="118" viewBox="0 0 120 118" fill="none">
 <g opacity="0.01">
@@ -276,7 +276,7 @@ const PasswordResetSuccess = () => {
             <button
               className="sma-submit"
               type="button"
-              onClick={() => navigate("/login")}
+             onClick={() => navigate(`/login/${role}`)}
             >
               Log in
             </button>

@@ -35,16 +35,17 @@ export const Seedbridge = () => {
             </p>
 
            <div className="hero-card__actions">
+
   <button
     className="hero-btn hero-btn--primary"
-    onClick={() => navigate("/create-investor")}
+    onClick={() => navigate("/create-account/investor")}
   >
     Join as Investor
   </button>
 
   <button
     className="hero-btn hero-btn--ghost"
-    onClick={() => navigate("/create-sma")}
+    onClick={() => navigate("/create-account/sma")}
   >
     Join as SMA
   </button>

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./seedbridge.css";
 import Background from "./background";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const SetNewPassword = () => {
   const navigate = useNavigate();
+  const { role } = useParams();
 
   const [pass, setPass] = useState("");
   const [confirm, setConfirm] = useState("");
@@ -18,7 +19,7 @@ const SetNewPassword = () => {
     e.preventDefault();
     if (!canSubmit) return;
 
- navigate("/password-reset-success");
+    navigate(`/password-reset-success/${role}`);
   };
 
   return (
@@ -27,8 +28,9 @@ const SetNewPassword = () => {
       <main className="hero">
         <div className="hero-wrap">
           <section className="hero-card">
-
-            <h1 className="sma-h1"style={{ marginTop: "20px" }}>Set a new password</h1>
+            <h1 className="sma-h1" style={{ marginTop: "20px" }}>
+              Set a new password
+            </h1>
 
             <h4 className="login-h4">
               Choose a strong password to secure your account.
@@ -76,7 +78,7 @@ const SetNewPassword = () => {
               <button
                 type="button"
                 className="back-login"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate(`/login/${role}`)}
               >
                 Back to log in
               </button>

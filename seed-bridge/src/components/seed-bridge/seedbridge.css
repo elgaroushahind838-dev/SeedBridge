@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  position: center;
+  position: relative;
 }
 
 .hero-wrap {
@@ -19,7 +19,6 @@
 
 .hero-card {
   width: min(760px, 92vw);
-  max-height: 95vh;
   border-radius: 16px;
   padding: 25px;
 
@@ -44,7 +43,6 @@
   text-align: left;
   color: rgba(255, 255, 255, 0.92);
   position: relative;
-  overflow-y: auto;
 }
 
 .hero-card__svg {
@@ -121,7 +119,7 @@
 
 .hero-btn--primary {
   background: rgba(151, 98, 240, 1);
-  font-weight: bold;
+  font-weight: normal;
   color: black;
 }
 
@@ -140,7 +138,7 @@
   background: rgba(68, 68, 68, 0);
   border: 1px solid rgba(126, 59, 237, 0.3);
   backdrop-filter: blur(2px);
-  font-weight: bold;
+  font-weight: normal;
   transition: background 0.12s ease;
 }
 
@@ -160,18 +158,20 @@
 .hero-card__footStrong {
   margin-bottom: 8px;
   font-size: 20px;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 255, 255, 1);
+  font-weight: bold;
 }
 
 .hero-card__footSoft {
   font-size: 16px;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 1);
 }
 /* Create SMA Page */
 .sma-h1 {
-  margin-top: -20px;
+  margin-top: -30px;
   text-align: center;
-  font-size: 26px;
+  margin-bottom: 2px;
+  font-size: 24px;
   font-weight: 500;
   color: rgba(255, 255, 255, 1);
 }
@@ -205,22 +205,19 @@
   justify-content: center;
   flex-wrap: wrap;
   margin-bottom: 10px;
-
 }
 
 .sma-social__btn {
   flex: 1;
   width: 26%;
   height: 50px;
-  border-radius: 30px;
- background: transparent;         
+  border-radius: 30px;      
   border: 1px solid transparent;  
   color: rgba(255, 255, 255, 0.92);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   cursor: pointer;
 background: rgba(255, 255, 255, 0.05);
 backdrop-filter: blur(20px);
@@ -286,8 +283,7 @@ backdrop-filter: blur(20px);
 .sma-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 6px;
+  gap: 8px;
 }
 
 .sma-label {
@@ -302,7 +298,6 @@ backdrop-filter: blur(20px);
 .sma-star {
   color: rgba(198, 255, 52, 1);
   font-weight: bold;
-  
 }
 
 .sma-input {
@@ -345,6 +340,7 @@ backdrop-filter: blur(20px);
 }
 
 .sma-agree {
+  font-size:14px;
   display: flex;
   align-items: center;
   gap: 10px;
